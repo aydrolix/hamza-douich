@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <style>
-    /* Style pour le menu qui disparaît */
+    /* pour que lemenu disparer  */
     .sticky-navbar {
       position: fixed;
       top: 0;
@@ -22,8 +22,8 @@
     }
 
     body {
-      padding-top: 68px; /* pour la barre apparaisse */
-      min-height: 200vh; /* Pour permettre de scroller et tester la navbar */
+      padding-top: 68px; /* Pour compenser la navbar fixed */
+      min-height: 200vh; /* la c est just pour tesster la nave bare  */
       background-color: #f5f5f5;
     }
 
@@ -35,11 +35,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('c:/Users/hamza/Downloads/le-paysage-fantastique-du-japon.jpg'); /* Remplacez par le chemin de votre image */
+      background-image: url('c:\\Users\\hamza\\Downloads\\fleurs-de-cerisier-au-printemps-pagode-chureito-et-montagne-fuji-au-coucher-du-soleil-au-japon.jpg'); /
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      opacity: 0.15; /* Opacité réduite pour ne pas gêner la lecture */
+      opacity: 0.15; 
       z-index: -1;
     }
 
@@ -52,7 +52,7 @@
       color: #555;
     }
     
-    /* Style pour les pétales de sakura */
+    /* petale de sakura  */
     .petal {
       position: absolute;
       background-color: rgba(255, 155, 180, 0.8);
@@ -83,33 +83,12 @@
       z-index: 2;
     }
 
-    /* Style pour l'image de fond de l'en-tête */
+    /* Style pour l'image de fond  */
     .hero-japan {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('votre-image-japon.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('c:\Users\hamza\Downloads\le-paysage-fantastique-du-japon.jpg');
       background-size: cover;
       background-position: center;
       color: white;
-    }
-
-    /* Style pour les boutons de la calculatrice */
-    .calc-btn {
-      transition: all 0.2s ease;
-    }
-    
-    .calc-btn:hover {
-      transform: scale(1.05);
-    }
-    
-    .calc-btn:active {
-      transform: scale(0.95);
-    }
-    
-    /* Style pour l'écran de la calculatrice */
-    .calc-screen {
-      font-family: 'Courier New', monospace;
-      letter-spacing: 1px;
-      text-align: right;
-      overflow: hidden;
     }
   </style>
 </head>
@@ -169,7 +148,7 @@
     </div>
   </div>
 
-  <!-- les differante section  -->
+  <!-- Contenu de placeholder avec sections pour chaque partie -->
   <div class="container mx-auto px-4">
     <!-- Accueil avec image japonaise en arrière-plan -->
     <section id="accueil" class="min-h-screen flex flex-col justify-center items-center hero hero-japan">
@@ -390,58 +369,8 @@
       </div>
     </section>
 
-    <!-- Section Calculatrice -->
-    <section id="calculatrice" class="py-16">
-      <h2 class="text-3xl font-bold mb-8 text-center">Calculatrice</h2>
-      <div class="card bg-base-100 shadow-xl max-w-md mx-auto">
-        <div class="card-body">
-          <div class="calculator-container bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-xl shadow-xl">
-            <!-- Écran de la calculatrice -->
-            <div class="calc-screen bg-gray-100 h-16 mb-4 rounded-lg p-2 flex items-center justify-end">
-              <div id="calc-history" class="text-gray-500 text-xs absolute top-3 left-3"></div>
-              <div id="calc-display" class="text-2xl font-bold">0</div>
-            </div>
-            
-            <!-- Boutons de la calculatrice -->
-            <div class="grid grid-cols-4 gap-2">
-              <!-- Première rangée -->
-              <button id="btn-clear" class="calc-btn btn bg-red-500 hover:bg-red-600 text-white font-bold">C</button>
-              <button id="btn-delete" class="calc-btn btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold">⌫</button>
-              <button id="btn-percent" class="calc-btn btn bg-blue-500 hover:bg-blue-600 text-white font-bold">%</button>
-              <button id="btn-divide" class="calc-btn btn bg-pink-500 hover:bg-pink-600 text-white font-bold">÷</button>
-              
-              <!-- Deuxième rangée -->
-              <button id="btn-7" class="calc-btn btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold">7</button>
-              <button id="btn-8" class="calc-btn btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold">8</button>
-              <button id="btn-9" class="calc-btn btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold">9</button>
-              <button id="btn-multiply" class="calc-btn btn bg-pink-500 hover:bg-pink-600 text-white font-bold">×</button>
-              
-              <!-- Troisième rangée -->
-              <button id="btn-4" class="calc-btn btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold">4</button>
-              <button id="btn-5" class="calc-btn btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold">5</button>
-              <button id="btn-6" class="calc-btn btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold">6</button>
-              <button id="btn-subtract" class="calc-btn btn bg-pink-500 hover:bg-pink-600 text-white font-bold">-</button>
-              
-              <!-- Quatrième rangée -->
-              <button id="btn-1" class="calc-btn btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold">1</button>
-              <button id="btn-2" class="calc-btn btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold">2</button>
-              <button id="btn-3" class="calc-btn btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold">3</button>
-              <button id="btn-add" class="calc-btn btn bg-pink-500 hover:bg-pink-600 text-white font-bold">+</button>
-              
-              <!-- Cinquième rangée -->
-              <button id="btn-0" class="calc-btn btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold col-span-2">0</button>
-              <button id="btn-decimal" class="calc-btn btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold">.</button>
-              <button id="btn-equals" class="calc-btn btn bg-green-500 hover:bg-green-600 text-white font-bold">=</button>
-            </div>
-          </div>
-          
-          <div class="mt-6 text-center">
-            <p class="text-sm text-gray-500">Calculatrice inspirée du style japonais minimaliste</p>
-            <p class="text-xs text-gray-400 mt-2">Utilisez la souris ou le clavier pour calculer</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Section Calculatrice intégrée dynamiquement -->
+    <section id="calculatrice" class="py-16"></section>
 
     <section id="contact" class="py-16">
       <h2 class="text-3xl font-bold mb-8 text-center">Me contacter</h2>
@@ -464,28 +393,28 @@
     </section>
   </div>
 
-  <!-- scripte pour la barre -->
+  <!-- Script pour faire disparaître/apparaître la navbar -->
   <script>
     const navbar = document.getElementById('navbar');
-    const showThreshold = 50; // Distance pour que la barre aparait 
+    const showThreshold = 50; // Distance en pixels pour faire apparaître la navbar
     let isVisible = true;
 
     document.addEventListener('mousemove', (e) => {
       const mouseY = e.clientY;
       
-      // Si la souris est proche du haut de la page la barre va aparaitre b
+      // Si la souris est proche du haut de la page, montrer la navbar
       if (mouseY <= 60 && !isVisible) {
         navbar.classList.remove('hidden-navbar');
         isVisible = true;
       }
-      // c est pour que quand la souris vas vers le bas la ar sissparer 
+      // Si la souris est en dessous du seuil, cacher la navbar
       else if (mouseY > showThreshold && isVisible) {
         navbar.classList.add('hidden-navbar');
         isVisible = false;
       }
     });
 
-    // pour la barre
+    // Afficher la navbar au défilement vers le haut
     let lastScrollTop = 0;
     window.addEventListener('scroll', () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -502,7 +431,7 @@
       lastScrollTop = scrollTop;
     });
 
-    // le qucm
+    // Structure du questionnaire (à compléter)
     const questionnaire = [
       {
         qlabel: 'Quelle est la capitale de la France?',
@@ -513,10 +442,10 @@
           {rlabel: 'Marseille', rid: 3}
         ]
       }
-      // section que je vais ajouter plus tard 
+      // Autres questions à ajouter plus tard
     ];
     
-    // pour que sa soit les petale rose qui tombe  (
+    // Script pour les pétales de sakura en canvas (arrière-plan)
     const canvas = document.getElementById("sakura");
     const ctx = canvas.getContext("2d");
 
@@ -569,7 +498,7 @@
 
     draw();
     
-    // sa va parmettre au petale de tomber aleatoirment 
+    // Script pour les pétales qui tombent sur le CV
     const cvContainer = document.querySelector('.cv-container');
     
     function createCVPetal() {
@@ -579,5 +508,460 @@
       const petal = document.createElement('div');
       petal.className = 'petal';
       
-      // Taille aléatoire 
-      const size = Math.random()
+      // Taille aléatoire entre 5px et 15px
+      const size = Math.random() * 10 + 5;
+      petal.style.width = `${size}px`;
+      petal.style.height = `${size}px`;
+      
+      // Position aléatoire au-dessus du CV
+      const xPos = Math.random() * cvRect.width;
+      petal.style.left = `${xPos + cvRect.left}px`;
+      petal.style.top = `${cvRect.top - size}px`;
+      
+      // Opacité aléatoire
+      petal.style.opacity = Math.random() * 0.7 + 0.3;
+      
+      // Vitesse et durée aléatoires
+      const fallDuration = Math.random() * 5 + 5;
+      petal.style.animationDuration = `${fallDuration}s`;
+      
+      document.body.appendChild(petal);
+      
+      // Animation de chute
+      let fallPosition = cvRect.top - size;
+      const endPosition = cvRect.bottom;
+      const fallSpeed = (Math.random() * 2 + 1);
+      const swayAmount = Math.random() * 2 - 1;
+      let swayPosition = xPos + cvRect.left;
+      
+      function animatePetal() {
+        fallPosition += fallSpeed;
+        swayPosition += Math.sin(fallPosition * 0.02) * swayAmount;
+        
+        petal.style.top = `${fallPosition}px`;
+        petal.style.left = `${swayPosition}px`;
+        
+        if (fallPosition < endPosition) {
+          requestAnimationFrame(animatePetal);
+        } else {
+          petal.remove();
+        }
+      }
+      
+      animatePetal();
+    }
+    
+    // Section CV visible - activer les pétales
+    function checkCVVisibility() {
+      if (!cvContainer) return;
+      
+      const cvSection = document.getElementById('cv');
+      const rect = cvSection.getBoundingClientRect();
+      
+      // Si la section CV est visible
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        // Créer un nouveau pétale à intervalle régulier
+        if (document.querySelectorAll('.petal').length < 25) { // Limite le nombre de pétales
+          createCVPetal();
+        }
+      }
+    }
+    
+    // Créer des pétales lorsque la section CV est visible
+    setInterval(checkCVVisibility, 300);
+    
+    // Vérifier quand on scrolle
+    window.addEventListener('scroll', checkCVVisibility);
+
+    // Fonction pour définir l'image d'arrière-plan
+    document.addEventListener('DOMContentLoaded', function() {
+      const bgImage = 'c:\\Users\\hamza\\Downloads\\fleurs-de-cerisier-au-printemps-pagode-chureito-et-montagne-fuji-au-coucher-du-soleil-au-japon.jpg';
+      
+      // pour que le body se met a jour
+      document.body.style.backgroundImage = `url('${bgImage}')`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundPosition = 'center';
+      document.body.style.backgroundAttachment = 'fixed';
+      document.body.style.backgroundRepeat = 'no-repeat';
+      document.body.style.backgroundBlendMode = 'overlay';
+      
+      // Mettre à jour l'arrière-plan de la section hero
+      const heroSection = document.querySelector('#accueil');
+      if (heroSection) {
+        heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${bgImage}')`;
+        heroSection.style.backgroundSize = 'cover';
+        heroSection.style.backgroundPosition = 'center';
+      }
+    });
+
+    // debut de la calculatrice 
+    document.addEventListener('DOMContentLoaded', function() {
+      // Contenu HTML à insérer dans la section calculatrice
+      const calculatriceSection = document.getElementById('calculatrice');
+      if (calculatriceSection) {
+        // Remplacer le contenu actuel par notre calculatrice
+        calculatriceSection.innerHTML = `
+          <h2 class="text-3xl font-bold mb-8 text-center">Calculatrice</h2>
+          <div class="max-w-md mx-auto bg-base-100 shadow-xl rounded-xl overflow-hidden">
+            <!-- Écran d'affichage -->
+            <div class="bg-gray-800 text-white text-right px-4 py-6 text-3xl font-mono" id="calculatrice-display">0</div>
+            
+            <!-- Historique des opérations -->
+            <div class="text-sm text-gray-500 px-4 py-2 bg-gray-100 text-right" id="calculatrice-history"></div>
+            
+            <!-- Boutons de la calculatrice -->
+            <div class="grid grid-cols-4 gap-1 p-2 bg-gray-200">
+              <!-- Première ligne -->
+              <button class="btn btn-error text-white w-full" id="calculatrice-clear">C</button>
+              <button class="btn btn-neutral text-white w-full" id="calculatrice-backspace">⌫</button>
+              <button class="btn btn-neutral text-white w-full" id="calculatrice-percent">%</button>
+              <button class="btn btn-primary text-white w-full" data-operation="/">÷</button>
+              
+              <!-- Deuxième ligne -->
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" data-number="7">7</button>
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" data-number="8">8</button>
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" data-number="9">9</button>
+              <button class="btn btn-primary text-white w-full" data-operation="*">×</button>
+              
+              <!-- Troisième ligne -->
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" data-number="4">4</button>
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" data-number="5">5</button>
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" data-number="6">6</button>
+              <button class="btn btn-primary text-white w-full" data-operation="-">−</button>
+              
+              <!-- Quatrième ligne -->
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" data-number="1">1</button>
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" data-number="2">2</button>
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" data-number="3">3</button>
+              <button class="btn btn-primary text-white w-full" data-operation="+">+</button>
+              
+              <!-- Cinquième ligne -->
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" id="calculatrice-plusMinus">±</button>
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" data-number="0">0</button>
+              <button class="btn btn-ghost bg-gray-300 hover:bg-gray-400 w-full" id="calculatrice-decimal">.</button>
+              <button class="btn btn-primary text-white w-full" id="calculatrice-equals">=</button>
+            </div>
+          </div>
+          
+          <div class="mt-8 max-w-md mx-auto text-center">
+            <div class="collapse collapse-plus bg-base-200">
+              <input type="checkbox" /> 
+              <div class="collapse-title font-medium">
+                Fonctionnalités de la calculatrice
+              </div>
+              <div class="collapse-content"> 
+                <ul class="text-left list-disc list-inside">
+                  <li>Opérations basiques (addition, soustraction, multiplication, division)</li>
+                  <li>Calcul de pourcentage</li>
+                  <li>Changement de signe</li>
+                  <li>Touches du clavier supportées</li>
+                  <li>Historique des calculs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+        // Script pour la calculatrice
+        initCalculator();
+      }
+    });
+
+    // Fonction d'initialisation de la calculatrice
+    function initCalculator() {
+      const display = document.getElementById('calculatrice-display');
+      const history = document.getElementById('calculatrice-history');
+      const numberButtons = document.querySelectorAll('[data-number]');
+      const operationButtons = document.querySelectorAll('[data-operation]');
+      const equalsButton = document.getElementById('calculatrice-equals');
+      const clearButton = document.getElementById('calculatrice-clear');
+      const backspaceButton = document.getElementById('calculatrice-backspace');
+      const percentButton = document.getElementById('calculatrice-percent');
+      const plusMinusButton = document.getElementById('calculatrice-plusMinus');
+      const decimalButton = document.getElementById('calculatrice-decimal');
+      
+      let currentInput = '0';
+      let previousInput = '';
+      let operation = null;
+      let resetScreen = false;
+      let hasCalculated = false;
+      
+      // Fonction pour mettre à jour l'affichage
+      function updateDisplay() {
+        // Limite à 12 caractères pour éviter un débordement
+        const displayValue = currentInput.length > 12 ? currentInput.substring(0, 12) : currentInput;
+        if (display) display.textContent = displayValue;
+      }
+      
+      //  mettre à jour l'historique
+      function updateHistory() {
+        if (!history) return;
+        
+        if (operation) {
+          let operationSymbol = operation;
+          if (operation === '*') operationSymbol = '×';
+          if (operation === '/') operationSymbol = '÷';
+          if (operation === '-') operationSymbol = '−';
+          history.textContent = `${previousInput} ${operationSymbol}`;
+        } else {
+          history.textContent = '';
+        }
+      }
+      
+      // Fonction pour ajouter un nombre à l'entrée
+      function appendNumber(number) {
+        // pour Réinitialiser l'écran après un calcul
+        if (hasCalculated) {
+          currentInput = '0';
+          hasCalculated = false;
+        }
+        
+        // pour Réinitialiser l'écran si nécessaire
+        if (resetScreen) {
+          currentInput = '0';
+          resetScreen = false;
+        }
+        
+        // pour le 0 au depart 
+        if (currentInput === '0' && number !== '.') {
+          currentInput = number;
+        } else {
+          currentInput += number;
+        }
+        
+        updateDisplay();
+      }
+      
+      //  pour gérer les opérations
+      function handleOperation(op) {
+        
+        if (operation !== null) {
+          calculate();
+        }
+        
+        previousInput = currentInput;
+        operation = op;
+        resetScreen = true;
+        updateHistory();
+      }
+      
+      // Fonction pour calculer le résultat
+      function calculate() {
+        if (operation === null || previousInput === '') return;
+        
+        let computation;
+        const prev = parseFloat(previousInput);
+        const current = parseFloat(currentInput);
+        
+        if (isNaN(prev) || isNaN(current)) return;
+        
+        switch (operation) {
+          case '+':
+            computation = prev + current;
+            break;
+          case '-':
+            computation = prev - current;
+            break;
+          case '*':
+            computation = prev * current;
+            break;
+          case '/':
+            if (current === 0) {
+              // Division par zéro
+              computation = 'Erreur';
+            } else {
+              computation = prev / current;
+            }
+            break;
+          default:
+            return;
+        }
+        
+        // pour metre a jour l historique
+        if (history) {
+          let operationSymbol = operation;
+          if (operation === '*') operationSymbol = '×';
+          if (operation === '/') operationSymbol = '÷';
+          if (operation === '-') operationSymbol = '−';
+          history.textContent = `${previousInput} ${operationSymbol} ${currentInput} =`;
+        }
+        
+        // pour arrondir
+        if (computation !== 'Erreur') {
+          computation = Math.round(computation * 1000000) / 1000000;
+          currentInput = computation.toString();
+        } else {
+          currentInput = computation;
+        }
+        
+        operation = null;
+        previousInput = '';
+        resetScreen = true;
+        hasCalculated = true;
+        updateDisplay();
+      }
+      
+      //  pour effacer
+      function clear() {
+        currentInput = '0';
+        previousInput = '';
+        operation = null;
+        resetScreen = false;
+        hasCalculated = false;
+        updateDisplay();
+        updateHistory();
+      }
+      
+      // pour suprimer le dernier chiffre ou operation
+      function backspace() {
+        if (currentInput.length === 1 || currentInput === 'Erreur') {
+          currentInput = '0';
+        } else {
+          currentInput = currentInput.slice(0, -1);
+        }
+        updateDisplay();
+      }
+      
+      // pour le pourchentage
+      function percent() {
+        const current = parseFloat(currentInput);
+        currentInput = (current / 100).toString();
+        updateDisplay();
+      }
+      
+      // pour changer les singe
+      function toggleSign() {
+        if (currentInput === '0' || currentInput === 'Erreur') return;
+        
+        if (currentInput.charAt(0) === '-') {
+          currentInput = currentInput.substring(1);
+        } else {
+          currentInput = '-' + currentInput;
+        }
+        updateDisplay();
+      }
+      
+      // pour rajouter des vhiffre
+      function appendDecimal() {
+        if (resetScreen) {
+          currentInput = '0';
+          resetScreen = false;
+        }
+        
+        if (hasCalculated) {
+          currentInput = '0';
+          hasCalculated = false;
+        }
+        
+        if (currentInput.includes('.')) return;
+        currentInput += '.';
+        updateDisplay();
+      }
+      
+      // Épour que les boutons marche 
+      numberButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          appendNumber(button.getAttribute('data-number'));
+        });
+      });
+      
+      // pour les operation n
+      operationButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          handleOperation(button.getAttribute('data-operation'));
+        });
+      });
+      
+      // pour afficher le resultat
+      if (equalsButton) {
+        equalsButton.addEventListener('click', () => {
+          calculate();
+        });
+      }
+      
+      // efacment
+      if (clearButton) {
+        clearButton.addEventListener('click', () => {
+          clear();
+        });
+      }
+      
+      // retour en arriere 
+      if (backspaceButton) {
+        backspaceButton.addEventListener('click', () => {
+          backspace();
+        });
+      }
+      
+      // pour le pourcentage
+      if (percentButton) {
+        percentButton.addEventListener('click', () => {
+          percent();
+        });
+      }
+      
+      // pour les changment de singe 
+      if (plusMinusButton) {
+        plusMinusButton.addEventListener('click', () => {
+          toggleSign();
+        });
+      }
+      
+      // pour les bouton de decimal
+      if (decimalButton) {
+        decimalButton.addEventListener('click', () => {
+          appendDecimal();
+        });
+      }
+      
+      // Écouteurs d'événements pour le clavier
+      document.addEventListener('keydown', (event) => {
+        // pour que sa ne me pas de calcule quand ont est ^pas dans la section
+        const calculatriceSection = document.getElementById('calculatrice');
+        if (!calculatriceSection) return;
+        if (!calculatriceSection.offsetParent) return; // Vpour voir si ont voit la section
+        
+        // Touches numériques
+        if (/^[0-9]$/.test(event.key)) {
+          appendNumber(event.key);
+        }
+        
+        // les operation
+        switch (event.key) {
+          case '+':
+            handleOperation('+');
+            break;
+          case '-':
+            handleOperation('-');
+            break;
+          case '*':
+            handleOperation('*');
+            break;
+          case '/':
+            handleOperation('/');
+            break;
+          case 'Enter':
+            calculate();
+            break;
+          case 'Escape':
+            clear();
+            break;
+          case 'Backspace':
+            backspace();
+            break;
+          case '%':
+            percent();
+            break;
+          case '.':
+            appendDecimal();
+            break;
+        }
+      });
+      
+      // pour que l affichage s remet 
+      updateDisplay();
+    }
+    // fin de la fontion de la calu
+
+  </script>
+</body>
+</html>
