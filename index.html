@@ -1,771 +1,233 @@
-<!DOCTYPE html>
-<html lang="fr" data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Web Developer</title>
-  <!-- DaisyUI et TailwindCSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/3.9.4/full.css" rel="stylesheet" type="text/css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <style>
-    /* pour que lemenu disparer  */
-    .sticky-navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      transition: transform 0.3s ease-in-out;
-    }
+<!-- Section Contact -->
+<section id="contact" class="py-16">
+  <div class="section-bg p-8 mx-4">
+    <h2 class="text-3xl font-bold mb-8 text-center">Me Contacter</h2>
     
-    .hidden-navbar {
-      transform: translateY(-100%);
-    }
-
-    body {
-      padding-top: 68px; /* Pour compenser la navbar fixed */
-      min-height: 200vh; /* la c est just pour tesster la nave bare  */
-      background: linear-gradient(rgba(245, 245, 245, 0.2), rgba(245, 245, 245, 0.2)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-    }
-
-    /* Amélioration de la visibilité des sections */
-    .section-bg {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    }
-
-    .content-placeholder {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-      color: #555;
-    }
-    
-    /* petale de sakura  */
-    .petal {
-      position: absolute;
-      background-color: rgba(255, 155, 180, 0.8);
-      border-radius: 150% 0 150% 0;
-      animation: fall linear forwards;
-      z-index: 5;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-    
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-    
-    .cv-container {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Style pour l'image de fond  */
-    .hero-japan {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('c:\Users\hamza\Downloads\le-paysage-fantastique-du-japon.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-    }
-
-    /* Style pour le QCM */
-    .quiz-option {
-      transition: all 0.3s ease;
-    }
-    .quiz-option:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 155, 180, 0.3);
-    }
-    .quiz-option.correct {
-      background: linear-gradient(135deg, #10b981, #059669);
-      color: white;
-      border-color: #059669;
-    }
-    .quiz-option.incorrect {
-      background: linear-gradient(135deg, #ef4444, #dc2626);
-      color: white;
-      border-color: #dc2626;
-    }
-    .quiz-option.disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-  </style>
-</head>
-<body>
-    <!-- la jutilise un truc sur canvas pour les petale de sakura -->
-  <canvas id="sakura"></canvas>
-  
-  <!-- la c est pour que la barre apparais et disparais -->
-  <div class="sticky-navbar bg-base-100 shadow-lg transition-transform duration-300" id="navbar">
-    <div class="navbar container mx-auto">
-      <div class="navbar-start">
-        <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost lg:hidden">
-            <i class="fas fa-bars"></i>
-          </label>
-          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#cv">Mon CV</a></li>
-            <li><a href="#passion">Ma Passion</a></li>
-            <li><a href="#calculatrice">Calculatrice</a></li>
-            <li><a href="#contact">Me contacter</a></li>
-            <li><a href="#qcm-japon">QCM Japon</a></li>
-            <li><a href="#questionnaire">Questionnaire</a></li>
-          </ul>
+    <div class="max-w-2xl mx-auto">
+      <div class="alert alert-info shadow-lg mb-8">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current flex-shrink-0 w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span>Pour me contacter, vous devez d'abord répondre correctement aux questions suivantes.</span>
         </div>
-        <a class="btn btn-ghost normal-case text-xl">WebDev</a>
       </div>
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal px-1">
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#cv">Mon CV</a></li>
-          <li><a href="#passion">Ma Passion</a></li>
-          <li><a href="#calculatrice">Calculatrice</a></li>
-          <li><a href="#contact">Me contacter</a></li>
-          <li><a href="#qcm-japon">QCM Japon</a></li>
-          <li><a href="#questionnaire">Questionnaire</a></li>
-        </ul>
+
+      <div id="questionnaire-container" class="mb-8">
+        <!-- Le questionnaire sera injecté ici -->
       </div>
-      <div class="navbar-end">
-        <div class="dropdown dropdown-end">
-          <label tabindex="0" class="btn btn-ghost btn-circle">
-            <div class="indicator">
-              <i class="fas fa-moon"></i>
-            </div>
-          </label>
-          <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
-            <div class="card-body">
-              <span class="font-bold text-lg">Thèmes</span>
-              <div class="flex flex-col">
-                <button class="btn btn-sm btn-ghost" onclick="document.documentElement.setAttribute('data-theme', 'light')">Clair</button>
-                <button class="btn btn-sm btn-ghost" onclick="document.documentElement.setAttribute('data-theme', 'dark')">Sombre</button>
-                <button class="btn btn-sm btn-ghost" onclick="document.documentElement.setAttribute('data-theme', 'cupcake')">Cupcake</button>
-                <button class="btn btn-sm btn-ghost" onclick="document.documentElement.setAttribute('data-theme', 'cyberpunk')">Cyberpunk</button>
+
+      <div id="contact-form" class="hidden">
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title">Formulaire de Contact</h3>
+            <form id="contact-email-form" class="space-y-4">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Nom</span>
+                </label>
+                <input type="text" id="contact-name" class="input input-bordered" required />
               </div>
-            </div>
+              
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Prénom</span>
+                </label>
+                <input type="text" id="contact-firstname" class="input input-bordered" required />
+              </div>
+              
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Email</span>
+                </label>
+                <input type="email" id="contact-email" class="input input-bordered" required />
+              </div>
+              
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Message</span>
+                </label>
+                <textarea id="contact-message" class="textarea textarea-bordered h-24" required></textarea>
+              </div>
+              
+              <div class="form-control mt-6">
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
- 
-  <div class="container mx-auto px-4">
-    <!-- la c est mon aceuille -->
-    <section id="accueil" class="min-h-screen flex flex-col justify-center items-center hero hero-japan">
-      <div class="hero-overlay bg-opacity-60"></div>
-      <div class="hero-content text-center text-white">
-        <div class="max-w-md">
-          <h1 class="text-5xl font-bold mb-4">Bienvenue sur mon Portfolio</h1>
-          <p class="text-xl">Développeur web passionné</p>
-          <div class="mt-8">
-            <a href="#cv" class="btn btn-primary mr-2">Voir mon CV</a>
-            <a href="#contact" class="btn glass">Me contacter</a>
-          </div>
+<!-- Scripts du questionnaire et du formulaire de contact -->
+<script>
+// Questionnaire de contact
+const questionnaire = [
+  {
+    qlabel: "Quel est le langage de programmation principal utilisé pour le développement web frontend?",
+    qid: 1,
+    reponses: [
+      { rlabel: "Python", rid: 1 },
+      { rlabel: "JavaScript", rid: 2 },
+      { rlabel: "Java", rid: 3 }
+    ],
+    correct: 2
+  },
+  {
+    qlabel: "Quel framework CSS est utilisé dans ce portfolio?",
+    qid: 2,
+    reponses: [
+      { rlabel: "Bootstrap", rid: 1 },
+      { rlabel: "Tailwind CSS", rid: 2 },
+      { rlabel: "Bulma", rid: 3 }
+    ],
+    correct: 2
+  },
+  {
+    qlabel: "Quelle est la bibliothèque UI utilisée avec Tailwind dans ce portfolio?",
+    qid: 3,
+    reponses: [
+      { rlabel: "DaisyUI", rid: 1 },
+      { rlabel: "Flowbite", rid: 2 },
+      { rlabel: "HeadlessUI", rid: 3 }
+    ],
+    correct: 1
+  }
+];
+
+// Variable pour stocker les réponses
+let reponses = '';
+let currentQuestionIndex = 0;
+
+// Fonction pour afficher une question
+function displayQuestion() {
+  const container = document.getElementById('questionnaire-container');
+  if (currentQuestionIndex >= questionnaire.length) {
+    checkAnswers();
+    return;
+  }
+
+  const question = questionnaire[currentQuestionIndex];
+  const html = `
+    <div class="card bg-base-100 shadow-xl mb-4">
+      <div class="card-body">
+        <h3 class="card-title text-lg mb-4">Question ${currentQuestionIndex + 1}</h3>
+        <p class="mb-4">${question.qlabel}</p>
+        <div class="space-y-2">
+          ${question.reponses.map((reponse, index) => `
+            <button 
+              class="btn btn-outline btn-wide w-full justify-start" 
+              onclick="submitAnswer(${question.qid}, ${reponse.rid})"
+            >
+              ${reponse.rlabel}
+            </button>
+          `).join('')}
         </div>
       </div>
-    </section>
+    </div>
+  `;
+  
+  container.innerHTML = html;
+}
 
-    <!-- mon cv -->
-    <section id="cv" class="py-16">
-      <div class="section-bg p-8 mx-4">
-        <h2 class="text-3xl font-bold mb-8 text-center">Mon CV</h2>
-        
-        <!-- CV Container -->
-        <div class="cv-container max-w-4xl mx-auto shadow-xl bg-white">
-          <!-- En-tête -->
-          <div class="bg-gray-800 text-white px-6 py-6">
-            <div class="flex items-center space-x-6">
-              <img src="https://placehold.co/100x100" alt="Avatar Hamza" class="rounded-full border-2 border-pink-300 w-20 h-20" />
-              <div>
-                <h1 class="text-3xl font-bold">Hamza Douich</h1>
-                <p class="text-gray-300 italic">Développeur web et passionné de technologies</p>
-              </div>
-            </div>
-          </div>
+// Fonction pour soumettre une réponse
+function submitAnswer(qid, rid) {
+  reponses += `A${qid}${rid}`;
+  currentQuestionIndex++;
+  displayQuestion();
+}
 
-          <div class="flex flex-col md:flex-row">
-            <!-- Colonne gauche -->
-            <div class="w-full md:w-1/3 bg-gray-100 p-6">
-              <!-- Informations -->
-              <div class="mb-6">
-                <h2 class="text-xl font-semibold border-b border-pink-400 pb-2 mb-3">Informations personnelles</h2>
-                <ul class="space-y-3">
-                  <li class="flex items-center"><i class="fas fa-envelope mr-3 text-pink-500 w-5"></i><span>hamza.douich@email.com</span></li>
-                  <li class="flex items-center"><i class="fas fa-phone mr-3 text-pink-500 w-5"></i><span>+33 6 12 34 56 78</span></li>
-                  <li class="flex items-center"><i class="fas fa-map-marker-alt mr-3 text-pink-500 w-5"></i><span>Paris, France</span></li>
-                  <li class="flex items-center"><i class="fab fa-linkedin mr-3 text-pink-500 w-5"></i><span>linkedin.com/in/hamzadouich</span></li>
-                </ul>
-              </div>
-
-              <!-- Formation -->
-              <div class="mb-6">
-                <h2 class="text-xl font-semibold border-b border-pink-400 pb-2 mb-3">Formation</h2>
-                <div class="mb-4">
-                  <div class="font-medium">BTS Services Informatiques</div>
-                  <div class="text-sm text-gray-600">Lycée ABC, Paris</div>
-                  <div class="text-sm text-gray-600">2022 - 2024</div>
-                </div>
-                <div>
-                  <div class="font-medium">Baccalauréat Général</div>
-                  <div class="text-sm text-gray-600">Lycée XYZ, Paris</div>
-                  <div class="text-sm text-gray-600">2019 - 2022</div>
-                </div>
-              </div>
-
-              <!-- Compétences -->
-              <div class="mb-6">
-                <h2 class="text-xl font-semibold border-b border-pink-400 pb-2 mb-3">Compétences</h2>
-                <div class="mb-2">
-                  <div class="font-medium">Développement Web - Expert</div>
-                  <div class="text-sm text-gray-600">HTML5, CSS3, JavaScript</div>
-                </div>
-                <div class="mb-2">
-                  <div class="font-medium">Frameworks - Expert</div>
-                  <div class="text-sm text-gray-600">Tailwind CSS, DaisyUI</div>
-                </div>
-                <div class="mb-2">
-                  <div class="font-medium">Node.js/npm - Expert</div>
-                  <div class="text-sm text-gray-600">Git, GitHub</div>
-                </div>
-                <div class="mb-2">
-                  <div class="font-medium">Programmation - Expert</div>
-                  <div class="text-sm text-gray-600">React.js, PHP, Python</div>
-                </div>
-                <div>
-                  <div class="font-medium">Résolution de problèmes - Expert</div>
-                </div>
-              </div>
-
-              <!-- Langues -->
-              <div>
-                <h2 class="text-xl font-semibold border-b border-pink-400 pb-2 mb-3">Langues</h2>
-                <div class="mb-1"><div class="font-medium">Français - Natif</div></div>
-                <div class="mb-1"><div class="font-medium">Anglais - Courant</div></div>
-                <div><div class="font-medium">Arabe - Notions</div></div>
-              </div>
-            </div>
-
-            <!-- Colonne droite -->
-            <div class="w-full md:w-2/3 bg-white p-6">
-              <!-- Profil -->
-              <div class="mb-8">
-                <h2 class="text-xl font-semibold border-b border-pink-400 pb-2 mb-3">Profil</h2>
-                <p class="text-gray-700">
-                  Développeur web passionné par la création d'interfaces modernes et intuitives.
-                  Expérience confirmée dans la gestion et la coordination de projets de développement.
-                  Compétent en matière de service à la clientèle et de résolution de problèmes techniques.
-                </p>
-              </div>
-
-              <!-- Expérience -->
-              <div class="mb-8">
-                <h2 class="text-xl font-semibold border-b border-pink-400 pb-2 mb-3">Expérience professionnelle</h2>
-                <div class="mb-5">
-                  <div class="font-medium">Stage développeur web — Entreprise XYZ, Paris</div>
-                  <div class="text-sm text-gray-500 italic mb-2">Juin 2024 - Août 2024</div>
-                  <ul class="list-disc list-inside text-gray-700">
-                    <li>Développement de nouvelles fonctionnalités</li>
-                    <li>Optimisation de la base de données MySQL</li>
-                    <li>Correction de bugs</li>
-                    <li>Participation aux réunions d'équipe</li>
-                  </ul>
-                </div>
-                <div class="mb-5">
-                  <div class="font-medium">Projet freelance — Site e-commerce</div>
-                  <div class="text-sm text-gray-500 italic mb-2">Mars 2024 - Mai 2024</div>
-                  <ul class="list-disc list-inside text-gray-700">
-                    <li>Création d'un site e-commerce complet</li>
-                    <li>Intégration paiement + gestion des stocks</li>
-                    <li>Design responsive avec Tailwind CSS</li>
-                  </ul>
-                </div>
-                <div>
-                  <div class="font-medium">Projet personnel — Gestion de tâches</div>
-                  <div class="text-sm text-gray-500 italic mb-2">Janvier 2024</div>
-                  <ul class="list-disc list-inside text-gray-700">
-                    <li>Application web de to-do list</li>
-                    <li>HTML, CSS, JavaScript, Node.js</li>
-                    <li>Auth utilisateur</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Références -->
-              <div>
-                <h2 class="text-xl font-semibold border-b border-pink-400 pb-2 mb-3">Références</h2>
-                <p class="text-gray-700">Références disponibles sur demande</p>
-              </div>
-            </div>
-          </div>
+// Fonction pour vérifier les réponses
+function checkAnswers() {
+  const correctAnswers = questionnaire.map(q => `A${q.qid}${q.reponses[q.correct - 1].rid}`).join('');
+  const container = document.getElementById('questionnaire-container');
+  const contactForm = document.getElementById('contact-form');
+  
+  if (reponses === correctAnswers) {
+    container.innerHTML = `
+      <div class="alert alert-success shadow-lg mb-8">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Félicitations! Vous pouvez maintenant me contacter.</span>
         </div>
       </div>
-    </section>
-
-    <!-- la c est mes passion et j ai rajouter les image -->
-    <section id="passion" class="py-16">
-      <div class="section-bg p-8 mx-4">
-        <h2 class="text-3xl font-bold mb-8 text-center">Ma Passion pour le Japon</h2>
-        <div class="card lg:card-side bg-base-100 shadow-xl max-w-5xl mx-auto overflow-hidden">
-          <figure class="lg:w-1/2">
-            <!-- Image principale différente -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Mont Fuji avec pagode et cerisiers" class="w-full h-full object-cover" />
-          </figure>
-          <div class="card-body lg:w-1/2">
-            <h3 class="card-title text-2xl">Le Pays du Soleil Levant</h3>
-            <div class="space-y-4">
-              <p>Le Japon a toujours exercé sur moi une fascination particulière. La dualité entre tradition séculaire et modernité futuriste crée un contraste saisissant qui inspire mon travail de développeur.</p>
-              
-              <div class="collapse collapse-plus bg-base-200">
-                <input type="checkbox" /> 
-                <div class="collapse-title font-medium">
-                  L'esthétique japonaise
-                </div>
-                <div class="collapse-content"> 
-                  <p>J'admire particulièrement les principes de "wabi-sabi" - l'acceptation de l'imperfection - et de "ma" - l'importance de l'espace négatif. Ces concepts influencent ma façon de concevoir des interfaces utilisateur équilibrées et harmonieuses.</p>
-                </div>
-              </div>
-              
-              <div class="collapse collapse-plus bg-base-200">
-                <input type="checkbox" /> 
-                <div class="collapse-title font-medium">
-                  Les quatres saisons
-                </div>
-                <div class="collapse-content"> 
-                  <p>Le Japon célèbre magnifiquement chaque saison. La plus emblématique reste le printemps avec ses cerisiers en fleurs (sakura), symbole de la beauté éphémère de la vie. Cette philosophie m'inspire à créer des expériences web mémorables.</p>
-                </div>
-              </div>
-              
-              <div class="collapse collapse-plus bg-base-200">
-                <input type="checkbox" /> 
-                <div class="collapse-title font-medium">
-                  Art et technologie
-                </div>
-                <div class="collapse-content"> 
-                  <p>Le Japon excelle dans l'art de combiner traditions ancestrales et innovations technologiques. Cette fusion harmonieuse est une source d'inspiration constante dans mes projets de développement web.</p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="card-actions justify-end mt-4">
-              <button class="btn btn-primary">Découvrir plus</button>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Gallerie de miniatures avec images différentes -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-5xl mx-auto">
-          <div class="bg-pink-100 p-4 rounded-lg text-center shadow-md hover:shadow-xl transition-shadow flex flex-col items-center">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" alt="Mont Fuji" class="rounded-lg mb-2 w-16 h-16 object-cover shadow" />
-            <h4 class="font-semibold">Mont Fuji</h4>
-          </div>
-          <div class="bg-pink-100 p-4 rounded-lg text-center shadow-md hover:shadow-xl transition-shadow flex flex-col items-center">
-            <img src="https://images.unsplash.com/photo-1518684079-61a6c68f13b5?auto=format&fit=crop&w=200&q=80" alt="Temple" class="rounded-lg mb-2 w-16 h-16 object-cover shadow" />
-            <h4 class="font-semibold">Temples</h4>
-          </div>
-          <div class="bg-pink-100 p-4 rounded-lg text-center shadow-md hover:shadow-xl transition-shadow flex flex-col items-center">
-            <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=200&q=80" alt="Cerisiers" class="rounded-lg mb-2 w-16 h-16 object-cover shadow" />
-            <h4 class="font-semibold">Cerisiers</h4>
-          </div>
-          <div class="bg-pink-100 p-4 rounded-lg text-center shadow-md hover:shadow-xl transition-shadow flex flex-col items-center">
-            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=200&q=80" alt="Tokyo" class="rounded-lg mb-2 w-16 h-16 object-cover shadow" />
-            <h4 class="font-semibold">Tokyo</h4>
-          </div>
+    `;
+    contactForm.classList.remove('hidden');
+  } else {
+    container.innerHTML = `
+      <div class="alert alert-error shadow-lg mb-8">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Désolé, vos réponses ne sont pas correctes. Veuillez réessayer.</span>
         </div>
       </div>
-    </section>
+      <button class="btn btn-primary" onclick="resetQuestionnaire()">Réessayer</button>
+    `;
+  }
+}
 
-    <!-- Section Calculatrice intégrée dynamiquement -->
-    <section id="calculatrice" class="py-16">
-      <div class="section-bg p-8 mx-4">
-        <!-- Le contenu sera ajouté par JavaScript -->
-        <div id="calculatrice"></div>
-      </div>
-    </section>
-    <script>
-   
-      function renderCalculatrice() {
-        const calc = document.getElementById('calculatrice');
-        calc.innerHTML = `
-          <div class="max-w-xs mx-auto bg-base-100 shadow-2xl rounded-2xl p-6 flex flex-col items-center">
-            <h2 class="text-2xl font-bold mb-4 text-center">Calculatrice</h2>
-            <div class="w-full mb-4">
-              <input id="calc-display" class="input input-bordered w-full text-right text-xl font-mono mb-2 bg-white" type="text" value="0" readonly />
-            </div>
-            <div class="grid grid-cols-4 gap-2 w-full">
-              <button class="btn btn-outline btn-error col-span-2" onclick="clearCalc()">C</button>
-              <button class="btn btn-outline" onclick="inputCalc('%')">%</button>
-              <button class="btn btn-outline" onclick="inputCalc('/')">÷</button>
+// Fonction pour réinitialiser le questionnaire
+function resetQuestionnaire() {
+  reponses = '';
+  currentQuestionIndex = 0;
+  displayQuestion();
+}
 
-              <button class="btn btn-outline" onclick="inputCalc('7')">7</button>
-              <button class="btn btn-outline" onclick="inputCalc('8')">8</button>
-              <button class="btn btn-outline" onclick="inputCalc('9')">9</button>
-              <button class="btn btn-outline" onclick="inputCalc('*')">×</button>
+// Gestionnaire du formulaire de contact
+document.getElementById('contact-email-form')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('contact-name').value;
+  const firstname = document.getElementById('contact-firstname').value;
+  const email = document.getElementById('contact-email').value;
+  const message = document.getElementById('contact-message').value;
+  
+  const mailtoLink = `mailto:votreemail@example.com?subject=Contact depuis le portfolio&body=De : ${firstname} ${name}%0D%0A%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0AEmail : ${email}`;
+  
+  window.location.href = mailtoLink;
+});
 
-              <button class="btn btn-outline" onclick="inputCalc('4')">4</button>
-              <button class="btn btn-outline" onclick="inputCalc('5')">5</button>
-              <button class="btn btn-outline" onclick="inputCalc('6')">6</button>
-              <button class="btn btn-outline" onclick="inputCalc('-')">-</button>
+// Initialisation du questionnaire
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('questionnaire-container')) {
+    displayQuestion();
+  }
+});
 
-              <button class="btn btn-outline" onclick="inputCalc('1')">1</button>
-              <button class="btn btn-outline" onclick="inputCalc('2')">2</button>
-              <button class="btn btn-outline" onclick="inputCalc('3')">3</button>
-              <button class="btn btn-outline" onclick="inputCalc('+')">+</button>
+// Fonction pour le "brute force" des réponses
+function bruteForceAnswers() {
+  const correctAnswers = questionnaire.map(q => `A${q.qid}${q.reponses[q.correct - 1].rid}`).join('');
+  reponses = correctAnswers;
+  checkAnswers();
+}
 
-              <button class="btn btn-outline col-span-2" onclick="inputCalc('0')">0</button>
-              <button class="btn btn-outline" onclick="inputCalc('.')">.</button>
-              <button class="btn btn-success" onclick="evalCalc()">=</button>
-            </div>
-          </div>
-        `;
-      }
-
-      // Variables pour l'état de la calculatrice
-      let calcValue = "";
-      let calcResultDisplayed = false;
-
-      // Ajoute un caractère au champ d'affichage
-      function inputCalc(val) {
-        const display = document.getElementById('calc-display');
-        if (calcResultDisplayed && "0123456789.".includes(val)) {
-          // Si on vient d'appuyer sur =, repartir d'un nouveau calcul
-          calcValue = "";
-          calcResultDisplayed = false;
-        }
-        // Remplacer 0 initial
-        if (display.value === "0" && "0123456789".includes(val)) {
-          calcValue = val;
-        } else {
-          calcValue += val;
-        }
-        display.value = calcValue;
-      }
-
-      // Calcule le résultat
-      function evalCalc() {
-        const display = document.getElementById('calc-display');
-        try {
-          // Remplace les symboles pour JS
-          let toEval = calcValue.replace(/÷/g, "/").replace(/×/g, "*").replace(/%/g, "/100");
-          // Évite l'évaluation vide
-          if (toEval.trim() === "") return;
-          let result = eval(toEval);
-          display.value = result;
-          calcValue = result.toString();
-          calcResultDisplayed = true;
-        } catch (e) {
-          display.value = "Erreur";
-          calcValue = "";
-          calcResultDisplayed = true;
-        }
-      }
-
-      // Réinitialise la calculatrice
-      function clearCalc() {
-        document.getElementById('calc-display').value = "0";
-        calcValue = "";
-        calcResultDisplayed = false;
-      }
-
-      // Initialisation de la calculatrice au chargement
-      document.addEventListener("DOMContentLoaded", renderCalculatrice);
-    </script>
-
-    <!-- Section QCM Japon -->
-    <section id="qcm-japon" class="py-16">
-      <div class="section-bg p-8 mx-4 max-w-2xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8 text-center">QCM : Testez vos connaissances sur le Japon 🇯🇵</h2>
-        <div id="quiz-container-japon" class="space-y-8">
-          <!-- Le QCM sera rendu ici par JS -->
+// Ajout du bouton brute force
+document.addEventListener('DOMContentLoaded', () => {
+  const contactSection = document.getElementById('contact');
+  if (contactSection) {
+    const sectionBg = contactSection.querySelector('.section-bg');
+    if (sectionBg) {
+      sectionBg.insertAdjacentHTML(
+        'beforeend',
+        `
+        <div class="text-center mt-8">
+          <button 
+            class="btn btn-ghost btn-sm" 
+            onclick="bruteForceAnswers()"
+            title="Répondre automatiquement aux questions"
+          >
+            <i class="fas fa-terminal"></i>
+          </button>
         </div>
-        <div id="quiz-result-japon" class="hidden mt-8">
-          <div class="alert alert-success shadow-lg flex flex-col items-center">
-            <span class="text-xl font-bold" id="score-message-japon"></span>
-            <button class="btn btn-primary mt-4" onclick="initQcmJapon()">Rejouer</button>
-          </div>
-        </div>
-      </div>
-      <script>
-        // QCM Japon - Utilise TailwindCSS + DaisyUI pour le style
-        const qcmJaponQuestions = [
-          {
-            question: "Quelle est la capitale du Japon ?",
-            options: ["Tokyo", "Kyoto", "Osaka", "Nagoya"],
-            correct: 0
-          },
-          {
-            question: "Comment appelle-t-on les fleurs de cerisier ?",
-            options: ["Ume", "Momiji", "Sakura", "Kiku"],
-            correct: 2
-          },
-          {
-            question: "Quelle est la monnaie du Japon ?",
-            options: ["Won", "Yuan", "Baht", "Yen"],
-            correct: 3
-          },
-          {
-            question: "Quel est le plus haut sommet du Japon ?",
-            options: ["Mont Hiei", "Mont Fuji", "Mont Tate", "Mont Aso"],
-            correct: 1
-          },
-          {
-            question: "Quel est le nom du train à grande vitesse japonais ?",
-            options: ["Shinkansen", "TGV", "ICE", "KTX"],
-            correct: 0
-          }
-        ];
-
-        let qcmJaponCurrent = 0;
-        let qcmJaponScore = 0;
-
-        // Affiche une question du QCM
-        function renderQcmJaponQuestion() {
-          const container = document.getElementById('quiz-container-japon');
-          const result = document.getElementById('quiz-result-japon');
-          result.classList.add('hidden');
-          if (qcmJaponCurrent >= qcmJaponQuestions.length) {
-            showQcmJaponResult();
-            return;
-          }
-          const q = qcmJaponQuestions[qcmJaponCurrent];
-          container.innerHTML = `
-            <div class="card bg-base-100 shadow-xl">
-              <div class="card-body">
-                <h3 class="card-title mb-6 text-lg">${qcmJaponCurrent+1}. ${q.question}</h3>
-                <div class="grid grid-cols-1 gap-4">
-                  ${q.options.map((opt,i)=>`
-                    <button class="btn btn-outline btn-wide btn-lg text-left quiz-japon-option"
-                        onclick="selectQcmJapon(${i})">${opt}</button>
-                  `).join('')}
-                </div>
-              </div>
-            </div>
-          `;
-        }
-
-        // Quand on clique sur une réponse
-        function selectQcmJapon(selected) {
-          const q = qcmJaponQuestions[qcmJaponCurrent];
-          const buttons = document.querySelectorAll('.quiz-japon-option');
-          buttons.forEach((btn,i)=>{
-            btn.disabled = true;
-            if(i === q.correct) {
-              btn.classList.add('btn-success');
-            }
-            if(i === selected && i !== q.correct) {
-              btn.classList.add('btn-error');
-            }
-          });
-          if(selected === q.correct) qcmJaponScore++;
-          setTimeout(()=>{
-            qcmJaponCurrent++;
-            renderQcmJaponQuestion();
-          }, 900);
-        }
-
-        // Affiche le score final
-        function showQcmJaponResult() {
-          const container = document.getElementById('quiz-container-japon');
-          const result = document.getElementById('quiz-result-japon');
-          container.innerHTML = "";
-          result.classList.remove('hidden');
-          const msg = `Votre score est de ${qcmJaponScore} / ${qcmJaponQuestions.length} !`;
-          document.getElementById('score-message-japon').textContent = msg;
-        }
-
-        // Réinitialise le QCM
-        function initQcmJapon() {
-          qcmJaponCurrent = 0;
-          qcmJaponScore = 0;
-          renderQcmJaponQuestion();
-        }
-        // Initialisation QCM au chargement
-        document.addEventListener("DOMContentLoaded", initQcmJapon);
-      </script>
-    </section>
-    <ton HTML ici, ou demander si tu veux la version complète) ... -->
-
-    <!-- === SCRIPTS === -->
-    <script>
-      // Script pour faire apparaître/disparaître la navbar (identique à ton code)
-      const navbar = document.getElementById('navbar');
-      const showThreshold = 50; // la je choisie la distance en pixel
-      let isVisible = true;
-
-      document.addEventListener('mousemove', (e) => {
-        const mouseY = e.clientY;
-        if (mouseY <= 60 && !isVisible) {
-          navbar.classList.remove('hidden-navbar');
-          isVisible = true;
-        }
-        else if (mouseY > showThreshold && isVisible) {
-          navbar.classList.add('hidden-navbar');
-          isVisible = false;
-        }
-      });
-
-      let lastScrollTop = 0;
-      window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop < lastScrollTop) {
-          navbar.classList.remove('hidden-navbar');
-          isVisible = true;
-        } else {
-          navbar.classList.add('hidden-navbar');
-          isVisible = false;
-        }
-        lastScrollTop = scrollTop;
-      });
-
-      // Script pour les pétales de sakura avec canvas j ai utiliser un tuto pour ca 
-      const canvas = document.getElementById("sakura");
-      const ctx = canvas.getContext("2d");
-
-      let width = window.innerWidth;
-      let height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
-
-      window.addEventListener("resize", () => {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-      });
-
-      const petals = [];
-
-      function createPetal() {
-        return {
-          x: Math.random() * width,
-          y: Math.random() * height - height,
-          r: Math.random() * 5 + 2,
-          d: Math.random() * 2 + 1,
-          color: "rgba(255, 155, 180, 0.8)"
-        };
-      }
-
-      for (let i = 0; i < 50; i++) {
-        petals.push(createPetal());
-      }
-
-      function draw() {
-        ctx.clearRect(0, 0, width, height);
-        for (let i = 0; i < petals.length; i++) {
-          let p = petals[i];
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = p.color;
-          ctx.fill();
-          p.y += p.d;
-          p.x += Math.sin(p.y * 0.01);
-
-          if (p.y > height) {
-            petals[i] = createPetal();
-            petals[i].y = 0;
-          }
-        }
-        requestAnimationFrame(draw);
-      }
-
-      draw();
-
-      // Script pour les pétales qui tombent sur le CV
-      const cvContainer = document.querySelector('.cv-container');
-      function createCVPetal() {
-        if (!cvContainer) return;
-        const cvRect = cvContainer.getBoundingClientRect();
-
-        const petal = document.createElement('div');
-        petal.className = 'petal';
-
-        // taille aleatoir en px
-        const size = Math.random() * 10 + 5;
-        petal.style.width = `${size}px`;
-        petal.style.height = `${size}px`;
-
-        // pour que sa soit au dessus su cv
-        const xPos = Math.random() * cvRect.width;
-        petal.style.left = `${xPos + cvRect.left}px`;
-        petal.style.top = `${cvRect.top - size}px`;
-
-        // Opacité aléatoire
-        petal.style.opacity = Math.random() * 0.7 + 0.3;
-
-        // Vitesse et durée aléatoires
-        const fallDuration = Math.random() * 5 + 5;
-        petal.style.animationDuration = `${fallDuration}s`;
-
-        document.body.appendChild(petal);
-
-        // Animation de chute
-        let fallPosition = cvRect.top - size;
-        const endPosition = cvRect.bottom;
-        const fallSpeed = (Math.random() * 2 + 1);
-        const swayAmount = Math.random() * 2 - 1;
-        let swayPosition = xPos + cvRect.left;
-
-        function animatePetal() {
-          fallPosition += fallSpeed;
-          swayPosition += Math.sin(fallPosition * 0.02) * swayAmount;
-
-          petal.style.top = `${fallPosition}px`;
-          petal.style.left = `${swayPosition}px`;
-
-          if (fallPosition < endPosition) {
-            requestAnimationFrame(animatePetal);
-          } else {
-            petal.remove();
-          }
-        }
-
-        animatePetal();
-      }
-
-      // des que ont voit le cv et bas sa tombes
-      function checkCVVisibility() {
-        if (!cvContainer) return;
-
-        const cvSection = document.getElementById('cv');
-        const rect = cvSection.getBoundingClientRect();
-
-        // Si la section CV est visible
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          // Créer un nouveau pétale à intervalle régulier
-          if (document.querySelectorAll('.petal').length < 25) { // Limite le nombre de pétales
-            createCVPetal();
-          }
-        }
-      }
-
-      // Créer des pétales quand ont vois la section CV 
-      setInterval(checkCVVisibility, 300);
-
-      // Vérifier quand on scrolle
-      window.addEventListener('scroll', checkCVVisibility);
-
-    </script>
-  </div>
-</body>
-</html>
+        `
+      );
+    }
+  }
+});
+</script>
